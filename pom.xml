@@ -45,6 +45,14 @@
             <version>0.15</version>
             <!-- <scope>test</scope> -->
         </dependency>
+
+
+        <dependency>
+            <groupId>com.github.tomakehurst</groupId>
+            <artifactId>wiremock</artifactId>
+            <version>2.27.2</version>
+            <!-- <scope>test</scope> -->
+        </dependency>
     </dependencies>
 
     <build>
@@ -131,7 +139,7 @@
                         <id>enforce</id>
                         <configuration>
                             <rules>
-                                <dependencyConvergence/>
+                                <!-- <dependencyConvergence/> -->
                                 <banDuplicatePomDependencyVersions/>
                                 <requireMavenVersion>
                                     <version>3.6.3</version>
@@ -237,32 +245,44 @@
                 <artifactId>maven-project-info-reports-plugin</artifactId>
                 <version>3.0.0</version>
             </plugin>
-
-            <!-- Tactical solution to run jcstress from Maven -->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>test</id>
-                        <phase>test</phase>
-                        <configuration>
-                            <executable>./gradlew</executable>
-                            <arguments>
-                                <argument>jcstress</argument>
-                                <!--
-                                <argument>- -tests</argument>
-                                <argument>ConcurrentAccountTest</argument>
-                                -->
-                            </arguments>
-                        </configuration>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>jcstress</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+
+                    <!-- Tactical solution to run jcstress from Maven -->
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>test</id>
+                                <phase>test</phase>
+                                <configuration>
+                                    <executable>./gradlew</executable>
+                                    <arguments>
+                                        <argument>jcstress</argument>
+                                        <!--
+                                        <argument>- -tests</argument>
+                                        <argument>WiremockTest</argument>
+                                        -->
+                                    </arguments>
+                                </configuration>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

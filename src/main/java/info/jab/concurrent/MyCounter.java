@@ -18,5 +18,4 @@ public class MyCounter {
     public int getCount() {
         return count;
     }
-
 }

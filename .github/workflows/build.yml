@@ -18,4 +18,4 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
       - name: Build with Maven Wrapper
-        run: ./mvnw verify -B
+        run: ./mvnw clean verify -P jcstress
