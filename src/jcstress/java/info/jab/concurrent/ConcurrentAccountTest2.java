@@ -8,14 +8,14 @@ import org.openjdk.jcstress.annotations.Outcome;
 import org.openjdk.jcstress.annotations.State;
 import org.openjdk.jcstress.infra.results.I_Result;
 
-//@JCStressTest
+@JCStressTest
 @Outcome(id = "10", expect = Expect.ACCEPTABLE, desc = "actor1 incremented, then actor2.")
 @Outcome(id = "20", expect = Expect.FORBIDDEN, desc = "actor1 incremented, then actor2.")
 @Outcome(id = "40", expect = Expect.FORBIDDEN, desc = "actor1 incremented, then actor2.")
 @State
-public class ConcurrentAccountTest {
+public class ConcurrentAccountTest2 {
 
-    Account account = new Account(50);
+    Account2 account = new Account2(50);
 
     @Actor
     void actor1() {

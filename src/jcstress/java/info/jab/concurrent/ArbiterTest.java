@@ -27,7 +27,6 @@ public class ArbiterTest {
         cnt = 2;
     }
 
-
     @Arbiter
     public void observe(I_Result res) {
         res.r1 = cnt;
