@@ -75,7 +75,7 @@
                     <dependency>
                         <groupId>com.puppycrawl.tools</groupId>
                         <artifactId>checkstyle</artifactId>
-                        <version>10.1</version>
+                        <version>10.2</version>
                     </dependency>
                 </dependencies>
                 <configuration>
@@ -269,10 +269,8 @@
                                     <executable>./gradlew</executable>
                                     <arguments>
                                         <argument>jcstress</argument>
-                                        <!--
-                                        <argument>- -tests</argument>
-                                        <argument>WiremockTest</argument>
-                                        -->
+                                        <argument>--tests</argument>
+                                        <argument>Problem1Test</argument>
                                     </arguments>
                                 </configuration>
                                 <goals>
