@@ -13,4 +13,5 @@
     <suppress checks="LineLength" files="." />
     <suppress checks="MemberName" files="." />
     <suppress checks="ParameterName" files="." />
+    <suppress checks="TypeName" files="." />
 </suppressions>
