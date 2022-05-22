@@ -16,6 +16,7 @@
         <junit-jupiter.version>5.8.2</junit-jupiter.version>
         <assertj.artifactId>assertj-core</assertj.artifactId>
         <jcstress.artifactId>jcstress-core</jcstress.artifactId>
+        <jmh.version>1.35</jmh.version>
     </properties>
 
     <dependencies>
@@ -52,6 +53,17 @@
             <artifactId>wiremock</artifactId>
             <version>2.27.2</version>
             <!-- <scope>test</scope> -->
+        </dependency>
+
+        <dependency>
+            <groupId>org.openjdk.jmh</groupId>
+            <artifactId>jmh-core</artifactId>
+            <version>${jmh.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjdk.jmh</groupId>
+            <artifactId>jmh-generator-annprocess</artifactId>
+            <version>${jmh.version}</version>
         </dependency>
     </dependencies>
 
