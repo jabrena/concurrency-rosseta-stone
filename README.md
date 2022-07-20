@@ -1,6 +1,6 @@
 # Concurrency Rosseta Stone
 
-A repository to review the tool jcstress
+Improving your Multithreading code in the JVM.
 
 ## How to run
 
