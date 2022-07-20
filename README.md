@@ -1,4 +1,4 @@
-# java-jcstress
+# Concurrency Rosseta Stone
 
 A repository to review the tool jcstress
 
@@ -13,6 +13,12 @@ A repository to review the tool jcstress
 ```
 mvn prettier:write
 mvn versions:display-dependency-updates
+```
+
+## Documentation
+
+```
+jwebserver -p 8000
 ```
 
 ## References
