@@ -13,9 +13,10 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
 
-        <junit-jupiter.version>5.8.2</junit-jupiter.version>
-        <assertj.artifactId>assertj-core</assertj.artifactId>
-        <jcstress.artifactId>jcstress-core</jcstress.artifactId>
+        <junit-jupiter.version>5.9.0-RC1</junit-jupiter.version>
+        <assertj-core.version>3.23.1</assertj-core.version>
+        <jcstress-core.version>0.15</jcstress-core.version>
+        <checkstyle.version>10.3.1</checkstyle.version>
     </properties>
 
     <dependencies>
@@ -27,8 +28,8 @@
         </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
-            <artifactId>${assertj.artifactId}</artifactId>
-            <version>3.22.0</version>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj-core.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -41,8 +42,8 @@
 
         <dependency>
             <groupId>org.openjdk.jcstress</groupId>
-            <artifactId>${jcstress.artifactId}</artifactId>
-            <version>0.15</version>
+            <artifactId>jcstress-core</artifactId>
+            <version>${jcstress-core.version}</version>
             <!-- <scope>test</scope> -->
         </dependency>
 
@@ -75,7 +76,7 @@
                     <dependency>
                         <groupId>com.puppycrawl.tools</groupId>
                         <artifactId>checkstyle</artifactId>
-                        <version>10.2</version>
+                        <version>${checkstyle.version}</version>
                     </dependency>
                 </dependencies>
                 <configuration>
